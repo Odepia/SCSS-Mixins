@@ -1,0 +1,62 @@
+/* BOX-SHADOW @bs-shadow */
+@mixin box-shadow($bs-shadow){
+	-webkit-box-shadow: $bs-shadow;
+	-moz-box-shadow: $bs-shadow;
+	box-shadow: $bs-shadow;
+}
+
+/* FADE @duration */
+@mixin fade ($duration: 0.2s) {
+	-webkit-transition: opacity $duration linear, visibility $duration linear;
+	-moz-transition: opacity $duration linear, visibility $duration linear;
+	-ms-transition: opacity $duration linear, visibility $duration linear;
+	transition: opacity $duration linear, visibility $duration linear;
+}
+
+/* TRANSITION @transition */
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	transition: $transition;
+}
+
+/* TRANSFORM @string */
+@mixin transform($string){
+	-webkit-transform: $string;
+	-moz-transform: $string;
+	-ms-transform: $string;
+	transform: $string
+}
+
+/* LINEAR GRADIENT (@from & @to) */
+@mixin linear-gradient($from, $to) {
+	background: $to;
+	background: -moz-linear-gradient(top, $from 0%, $to 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$from), color-stop(100%,$to));
+	background: -webkit-linear-gradient(top, $from 0%,$to 100%);
+	background: -o-linear-gradient(top, $from 0%,$to 100%);
+	background: linear-gradient(to bottom, $from 0%,$to 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$from}, endColorstr=#{$to})
+}
+
+/* BOX-SIZING (@value) */
+@mixin box-sizing($value) {
+	-moz-box-sizing: $value;
+	-webkit-box-sizing: $value;
+	box-sizing: $value;
+}
+
+/* CLEARFIX (@no-param) */
+@mixin clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
